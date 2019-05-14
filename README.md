@@ -13,30 +13,30 @@
   - 搜索系统：提供商品的搜索功能。
   - 单点登录系统：为多个系统之间提供用户登录凭证以及查询登录用户的信息。
 
-· 服务层
-  · shopping-sso 单点登录系统
-  · shopping-rest 商品服务层，提供信息，内容服务。
-  · shopping-order 订单服务层,提供订单基础服务。
-  · shopping-search 商品搜索服务，基于solr索引库。
-  · shopping-manage 后台服务层，提供后台基础服务。
-  · shopping-content CMS服务层，提供内容管理。
-  · shopping-sso 单点登录服务层，提供sso基础服务。
-  · shopping-sso-web 单点登录表现层，调用了sso的服务。
-  · shopping-cart 购物车服务层，提供了购物车的基础服务。
-  · shopping-order 订单服务层，提供了订单基础服务。
+- 服务层
+  - shopping-sso 单点登录系统
+  - shopping-rest 商品服务层，提供信息，内容服务。
+  - shopping-order 订单服务层,提供订单基础服务。
+  - shopping-search 商品搜索服务，基于solr索引库。
+  - shopping-manage 后台服务层，提供后台基础服务。
+  - shopping-content CMS服务层，提供内容管理。
+  - shopping-sso 单点登录服务层，提供sso基础服务。
+  - shopping-sso-web 单点登录表现层，调用了sso的服务。
+  - shopping-cart 购物车服务层，提供了购物车的基础服务。
+  - shopping-order 订单服务层，提供了订单基础服务。
  
-· 表现层
-  · shopping-manage-web 后台表现层，供管理员完成对网站商品和内容的增删改查,调用了manage、content、search的服务。
-  · shopping-order-web 订单表现层，调用了order、cart、sso的服务
-  · shopping-cart-web 购物车表现层，调用了cart、manage、sso的服务。
-  · shopping-search-web 搜索表现层，调用了search的服务。
-  · shopping-item-web 商品详情表现层，调用了manage的服务。
-  · shopping-portal-web 前台表现层，作为网站的门户，与用户交互,调用了content的服务。
-  · shopping-order-web  订单表现层，调用了order、cart、sso的服务
+- 表现层
+  - shopping-manage-web 后台表现层，供管理员完成对网站商品和内容的增删改查,调用了manage、content、search的服务。
+  - shopping-order-web 订单表现层，调用了order、cart、sso的服务
+  - shopping-cart-web 购物车表现层，调用了cart、manage、sso的服务。
+  - shopping-search-web 搜索表现层，调用了search的服务。
+  - shopping-item-web 商品详情表现层，调用了manage的服务。
+  - shopping-portal-web 前台表现层，作为网站的门户，与用户交互,调用了content的服务。
+  - shopping-order-web  订单表现层，调用了order、cart、sso的服务
   
-· 数据库
-    · mysql作为关系型数据库，提供了数据的持久化。
-    · redis作为内存数据库，提供高性能的缓存服务。
+- 数据库
+    - mysql作为关系型数据库，提供了数据的持久化。
+    - redis作为内存数据库，提供高性能的缓存服务。
     
  # 使用的中间件
  
