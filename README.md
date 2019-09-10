@@ -24,7 +24,7 @@
   - shopping-sso-web 单点登录表现层，调用了sso的服务。
   - shopping-cart 购物车服务层，提供了购物车的基础服务。
   - shopping-order 订单服务层，提供了订单基础服务。
- 
+
 - 表现层
   - shopping-manage-web 后台表现层，供管理员完成对网站商品和内容的增删改查,调用了manage、content、search的服务。
   - shopping-order-web 订单表现层，调用了order、cart、sso的服务
@@ -33,13 +33,24 @@
   - shopping-item-web 商品详情表现层，调用了manage的服务。
   - shopping-portal-web 前台表现层，作为网站的门户，与用户交互,调用了content的服务。
   - shopping-order-web  订单表现层，调用了order、cart、sso的服务
-  
+
 - 数据库
     - mysql作为关系型数据库，提供了数据的持久化。
+
     - redis作为内存数据库，提供高性能的缓存服务。
-    
+
+      # 抢红包功能
+
+      - 对于高并发，采用系统SET化设计，分而治之；逻辑Server层将请求分组、排队串行化、并发控制，解决DB并发问题；采用冷热数据分离，保障系统性能稳定。
+      - 对于高可用：采用多IDC分地域的部署设计；异步化设计将拆红包和金额到账等业务进行异步分离；通过版本控制来屏蔽故障号段的订单生成，来实现DB故障自愈能力建设。
+      - 对于可扩展性：平行缩扩容设计，尽量避免迁移SET。
+
+      ![20181015160415539](D:\mycode\idea\shopping\lib\20181015160415539.png)
+
+       
+
  # 使用的中间件
- 
+
 ## Nginx
 Nginx是一款高性能的http服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器。 
 
@@ -51,3 +62,5 @@ Solr是一个独立的企业级搜索应用服务器，它对外提供类似于W
 
 ## 消息服务Activemq
 ActiveMQ 是Apache出品，最流行的，能力强劲的开源消息总线。ActiveMQ 是一个完全支持JMS1.1和J2EE 1.4规范的 JMS Provider实现，尽管JMS规范出台已经是很久的事情了，但是JMS在当今的J2EE应用中间仍然扮演着特殊的地位。
+
+ 
