@@ -45,7 +45,7 @@
       - 对于高可用：采用多IDC分地域的部署设计；异步化设计将拆红包和金额到账等业务进行异步分离；通过版本控制来屏蔽故障号段的订单生成，来实现DB故障自愈能力建设。
       - 对于可扩展性：平行缩扩容设计，尽量避免迁移SET。
 
-      ![20181015160415539](.\shopping-RedPacket\20181015160415539.png)
+      ![20181015160415539](https://github.com/boyscoding/Shopping/blob/master/shopping-RedPacket/20181015160415539.png)
 
        
 
